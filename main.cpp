@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include <cassert>
 #include <time.h>
 #include <iostream>
 #include <string>
@@ -33,28 +34,43 @@ int main()
 
         Monster monster;
 
-        // should implement enum
-        int randomMonster = rand() % 10;
-        if(randomMonster == 0)
-            monster = Monster(slime);
-        else if(randomMonster == 1)
-            monster = Monster(worm);
-        else if(randomMonster == 2)
-            monster = Monster(mole);
-        else if(randomMonster == 3)
-            monster = Monster(spider);
-        else if(randomMonster == 4)
-            monster = Monster(roach);
-        else if(randomMonster == 5)
-            monster = Monster(zombie);
-        else if(randomMonster == 6)
-            monster = Monster(skeleton);
-        else if(randomMonster == 7)
-            monster = Monster(ghost);
-        else if(randomMonster == 8)
-            monster = Monster(goblin);
-        else if(randomMonster == 9)
-            monster = Monster(racoon);
+        int randomMonster = rand() % MONSTER;
+
+        switch(randomMonster)
+        {
+            case SLIME:
+                monster = Monster(slime);
+                break;
+            case WORM:
+                monster = Monster(worm);
+                break;
+            case MOLE:
+                monster = Monster(mole);
+                break;
+            case SPIDER:
+                monster = Monster(spider);
+                break;
+            case ROACH:
+                monster = Monster(roach);
+                break;
+            case ZOMBIE:
+                monster = Monster(zombie);
+                break;
+            case SKELETON:
+                monster = Monster(skeleton);
+                break;
+            case GHOST:
+                monster = Monster(ghost);
+                break;
+            case GOBLIN:
+                monster = Monster(goblin);
+                break;
+            case RACOON:
+                monster = Monster(racoon);
+                break;
+            default:
+                assert(false);
+        }
 
         std::cout << monster.getName() << "이(가) 나타났다!" << std::endl;
         std::cout << monster.getHealth() << " " << monster.getDamage() << std::endl;
@@ -90,13 +106,17 @@ int main()
                     return 0;
                 }
             }
-            if(input == 2)
+            else if(input == 2)
             {
                 showPlayerStatus(player);
             }
-            if(input == 3)
+            else if(input == 3)
             {
                 showMonsterStatus(monster);
+            }
+            else
+            {
+                continue;
             }
         }
     }

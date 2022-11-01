@@ -60,11 +60,27 @@ void Monster::setDamage(int damage)
     this->damage = damage;
 }
 
+const int MONSTER = 10;
+
+enum MonsterName
+{
+    SLIME,
+    WORM,
+    MOLE,
+    SPIDER,
+    ROACH,
+    ZOMBIE,
+    SKELETON,
+    GHOST,
+    GOBLIN,
+    RACOON,
+};
+
 Monster slime("슬라임", 10, 1);
 Monster worm("벌레", 20, 3);
 Monster mole("두더지", 30, 4);
 Monster spider("거미", 40, 5);
-Monster roach("강아지", 50, 10);
+Monster roach("바선생", 50, 10);
 Monster zombie("좀비", 60, 6);
 Monster skeleton("스켈레톤", 70, 7);
 Monster ghost("유령", 80, 8);
