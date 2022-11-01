@@ -5,6 +5,7 @@
 #include <string>
 #include "RPG6.h"
 #include "RPG6Player.h"
+#include "RPG6Monster.h"
 
 int main()
 {
@@ -35,28 +36,28 @@ int main()
         // should implement enum
         int randomMonster = rand() % 10;
         if(randomMonster == 0)
-            monster = slime;
+            monster = Monster(slime);
         else if(randomMonster == 1)
-            monster = worm;
+            monster = Monster(worm);
         else if(randomMonster == 2)
-            monster = mole;
+            monster = Monster(mole);
         else if(randomMonster == 3)
-            monster = spider;
+            monster = Monster(spider);
         else if(randomMonster == 4)
-            monster = roach;
+            monster = Monster(roach);
         else if(randomMonster == 5)
-            monster = zombie;
+            monster = Monster(zombie);
         else if(randomMonster == 6)
-            monster = skeleton;
+            monster = Monster(skeleton);
         else if(randomMonster == 7)
-            monster = ghost;
+            monster = Monster(ghost);
         else if(randomMonster == 8)
-            monster = goblin;
+            monster = Monster(goblin);
         else if(randomMonster == 9)
-            monster = racoon;
+            monster = Monster(racoon);
 
-        std::cout << monster.name << "이(가) 나타났다!" << std::endl;
-        std::cout << monster.health << " " << monster.damage << std::endl;
+        std::cout << monster.getName() << "이(가) 나타났다!" << std::endl;
+        std::cout << monster.getHealth() << " " << monster.getDamage() << std::endl;
 
         while(true)
         {
@@ -68,19 +69,19 @@ int main()
 
             if(input == 1)
             {
-                monster.health -= player.getDamage();
-                std::cout << monster.name << "에게 " << player.getDamage() << "의 데미지를 주었다!" << std::endl;
-                std::cout << monster.name << "의 체력: " << monster.health << std::endl;
+                monster.setHealth(-player.getDamage());
+                std::cout << monster.getName() << "에게 " << player.getDamage() << "의 데미지를 주었다!" << std::endl;
+                std::cout << monster.getName() << "의 체력: " << monster.getHealth() << std::endl;
 
-                if(monster.health <= 0)
+                if(monster.getHealth() <= 0)
                 {
-                    std::cout << monster.name << "을(를) 처치했다!" << std::endl;
+                    std::cout << monster.getName() << "을(를) 처치했다!" << std::endl;
                     player.nextFloor();
                     break;
                 }
 
-                player.setHealth(-monster.damage);
-                std::cout << monster.name << "에게 " << monster.damage << "의 데미지를 받았다!" << std::endl;
+                player.setHealth(-monster.getDamage());
+                std::cout << monster.getName() << "에게 " << monster.getDamage() << "의 데미지를 받았다!" << std::endl;
                 std::cout << "남은 체력: " << player.getHealth() << std::endl;
 
                 if(player.getHealth() <= 0)
