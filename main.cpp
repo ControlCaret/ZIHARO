@@ -17,21 +17,19 @@ int main()
 
     std::cout << std::endl;
 
-    struct Player player;
+    std::cout << std::endl;
 
+    std::string name;
     std::cout << "이름을 입력해 주세요: ";
-    std::cin >> player.name;
-    player.health = 100;
-    player.damage = 10;
-    player.level = 1;
-    player.floor = 1;
+    std::cin >> name;
+    Player player(name, 100, 10, 1, 1 );
     srand(time(NULL));
 
     showPlayerStatus(player);
 
     while(true)
     {
-        std::cout << "현재 층: " << player.floor << std::endl;
+        std::cout << "현재 층: " << player.getFloor() << std::endl;
 
         Monster monster;
 
@@ -71,22 +69,22 @@ int main()
 
             if(input == 1)
             {
-                monster.health -= player.damage;
-                std::cout << monster.name << "에게 " << player.damage << "의 데미지를 주었다!" << std::endl;
+                monster.health -= player.getDamage();
+                std::cout << monster.name << "에게 " << player.getDamage() << "의 데미지를 주었다!" << std::endl;
                 std::cout << monster.name << "의 체력: " << monster.health << std::endl;
 
                 if(monster.health <= 0)
                 {
                     std::cout << monster.name << "을(를) 처치했다!" << std::endl;
-                    player.floor++;
+                    player.nextFloor();
                     break;
                 }
 
-                player.health -= monster.damage;
+                player.setHealth(-monster.damage);
                 std::cout << monster.name << "에게 " << monster.damage << "의 데미지를 받았다!" << std::endl;
-                std::cout << "남은 체력: " << player.health << std::endl;
+                std::cout << "남은 체력: " << player.getHealth() << std::endl;
 
-                if(player.health <= 0)
+                if(player.getHealth() <= 0)
                 {
                     std::cout << "당신은 죽었습니다." << std::endl;
                     return 0;
