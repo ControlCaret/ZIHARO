@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "RPG6.h"
+#include "RPG6Player.h"
 
 int main()
 {
@@ -14,8 +15,6 @@ int main()
     //std::cout << "1. 새 게임\t 2. 불러오기\t 3. 종료\n" << std::endl;
 
     // implement here
-
-    std::cout << std::endl;
 
     std::cout << std::endl;
 
