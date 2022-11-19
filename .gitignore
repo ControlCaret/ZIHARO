@@ -1,2 +1,7 @@
 .vscode
+.vs
+*.vcxproj.user
 main
+x86
+x64
+Debug
