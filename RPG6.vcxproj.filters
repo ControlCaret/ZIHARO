@@ -20,13 +20,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RPG6.h">
+    <ClInclude Include="RPG6.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG6Monster.h">
+    <ClInclude Include="RPG6Monster.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG6Player.h">
+    <ClInclude Include="RPG6Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

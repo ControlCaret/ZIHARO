@@ -101,9 +101,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RPG6.h" />
-    <ClInclude Include="RPG6Monster.h" />
-    <ClInclude Include="RPG6Player.h" />
+    <ClInclude Include="RPG6.hpp" />
+    <ClInclude Include="RPG6Monster.hpp" />
+    <ClInclude Include="RPG6Player.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
