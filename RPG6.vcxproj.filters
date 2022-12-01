@@ -29,5 +29,8 @@
     <ClInclude Include="RPG6Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="color.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
